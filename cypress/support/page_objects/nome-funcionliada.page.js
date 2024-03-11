@@ -1,7 +1,7 @@
 class NomeClasse {
 
     nomeMetodo(parametros ){
-        //ações do método
+        
     }
 
 }

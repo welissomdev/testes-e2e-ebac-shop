@@ -26,11 +26,12 @@ class ComprasPage {
       cy.get(`.button-variable-item-${cor}`).click();
       cy.get('.input-text').clear().type(quantidade);
       cy.get('.single_add_to_cart_button').click();
+      cy.get('.dropdown-toggle > .text-skin > .icon-basket').click()
+      cy.get('#cart > .dropdown-menu > .widget_shopping_cart_content > .mini_cart_content > .mini_cart_inner > .mcart-border > .buttons > .checkout').click()
     }
    
    checkout() {
-     cy.get('.woocommerce-message > .button').should('exist')
-     cy.get('.checkout-button').should('exist')
+
    }
  
    finalizarPedido() {

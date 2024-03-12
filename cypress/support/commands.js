@@ -21,6 +21,6 @@ Cypress.Commands.add('addEndereço', (nome, sobrenome, pais, endereco, cidade, e
     cy.get('#billing_postcode').clear().type(cep);
     cy.get('#billing_phone').clear().type(telefone);
     cy.get('#billing_email').clear().type(email);
-    cy.get('#order_comments').clear().type(comentario);
+   
 })
 

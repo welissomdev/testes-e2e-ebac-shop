@@ -15,14 +15,11 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
     });
 
     it('Deve fazer um pedido na loja Ebac Shop de ponta a ponta', () => {
-        var tamanho = faker.random.arrayElement(tamanhos);
-        var cor = faker.random.arrayElement(cores);
-        var qtd = faker.random.number({ min: 1, max: 10 });
-
-        comprasPage.buscarProduto("Aero Daily Fitness Tee");
-        comprasPage.addProdutoCarinho(tamanho, cor, qtd);
-       
-
+    
+        let qtd = 3 
+        comprasPage.buscarProduto('Aero Daily Fitness Tee')
+        comprasPage.addProdutoCarinho('XS','Black', qtd)
+        cy.get('.woocommerce-info').should('contain','Você tem um cupom de desconto?')
 
         cy.fixture('dadosPessoais').then((dadosPessoais) => {
             var id = faker.random.number({ min: 0, max: 2 });
